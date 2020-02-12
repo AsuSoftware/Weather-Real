@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+  outline: none;
+}
+
+body{
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  body{
+    overflow: auto;
+  }
+
+  .content p{
+    margin: 0 12px;
+    line-height: 41px;
+  }
+
+}
+
+/* Ipad mini */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 1)  {
+  body{
+    height: 102vh;
+  }
+}
+
+/* Ipad pro */
+@media only screen
+  and (min-width: 1024px)
+  and (max-height: 1366px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    body{
+      height: 105vh;
+    }
+  }
