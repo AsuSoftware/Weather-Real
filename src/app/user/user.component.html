@@ -1,21 +1,23 @@
 <!-- Conditie pentru local pentru a incarca automat weatherul-->
-<section class="nav-bar">
-  <div class="logo">
-    <img src="assets/img/logo.png" alt="logo">
-  </div>
-  <button class="log-out">
-    <i class="far fa-sign-out-alt"></i>
-  </button>
-</section>
+<section class="parent">
+  <section class="nav-bar">
+    <div class="logo">
+      <img src="assets/img/logo.png" alt="logo">
+    </div>
+    <button class="log-out">
+      <i class="far fa-sign-out-alt"></i>
+    </button>
+  </section>
 
-<section class="home">
-  <form class="box">
-    <h2 class="title">Welcome to the Weather App</h2>
-    <h2 class="title-name">What is your name?</h2>
-    <input type="text" name="user" placeholder="Name" [(ngModel)]='name' />
-    <h2 class="location-h2">What is your location?</h2>
-    <input type="search" name="city" placeholder="Location" [(ngModel)]='location' />
-    <input type="button" value="Enter" (click)='getInput()' />
-  </form>
+  <section class="home">
+    <form class="box">
+      <h2 class="title">Welcome to the Weather App</h2>
+      <h2 class="title-name">What is your name?</h2>
+      <input type="text" name="user" placeholder="Name" [(ngModel)]='name' />
+      <h2 class="location-h2">What is your location?</h2>
+      <input type="search" name="city" placeholder="Location" [(ngModel)]='location' />
+      <input type="button" value="Enter" (click)='getInput()' />
+    </form>
+  </section>
+  <footer>&copy; Copyright 2020 Asu Software</footer>
 </section>
-<footer>&copy; Copyright 2020 Asu Software</footer>

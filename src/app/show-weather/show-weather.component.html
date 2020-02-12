@@ -1,54 +1,55 @@
-<div class="content-loading" *ngIf='loading; else show'>
-  <h1 class="load">
-    <span class="let1">l</span>
-    <span class="let2">o</span>
-    <span class="let3">a</span>
-    <span class="let4">d</span>
-    <span class="let5">i</span>
-    <span class="let6">n</span>
-    <span class="let7">g</span>
-  </h1>
-</div>
+<section class="parent">
+  <div class="content-loading" *ngIf='loading; else show'>
+    <h1 class="load">
+      <span class="let1">l</span>
+      <span class="let2">o</span>
+      <span class="let3">a</span>
+      <span class="let4">d</span>
+      <span class="let5">i</span>
+      <span class="let6">n</span>
+      <span class="let7">g</span>
+    </h1>
+  </div>
 
-<ng-template #show>
-  <section class="nav-bar">
-    <div class="logo"><img src="assets/img/logo.png" alt="logo"></div>
-    <button class="log-out" (click)='deleteData()'>
-      <i class="far fa-sign-out-alt"></i>
-    </button>
-  </section>
-  <div class="home">
-    <div class="container-info">
-      <div class="info">
-        <div class="location">{{result.location.name}}</div>
-        <div class="container-wind">Wind :
-          <div class="container-Value">{{result.current.wind_speed}} Km/h</div>
-          <i class="fad fa-windsock"></i>
-        </div>
-        <div class="container-humidity">Humidity :
-          <div class="container-Value">{{result.current.humidity}} %</div>
-          <i class="fas fa-humidity"></i>
-        </div>
-        <div class="container-pressure">Pressure :
-          <div class="container-Value">{{result.current.pressure.toLocaleString()}} hPa</div>
-          <i class="fas fa-heat"></i>
-        </div>
-        <div class="container-visibility">Visibility :
-          <div class="container-Value">{{result.current.visibility}} Km</div>
-          <i class="far fa-eye"></i>
-        </div>
-        <div class="container-temperature">Temperature :
-          <div class="container-Value">{{getExactNumber()}} °C</div>
-          <i *ngIf='getIconOfTemp(); else tempLow' class="fad fa-temperature-up"></i>
-          <ng-template #tempLow>
-            <i class="fal fa-temperature-down"></i>
-          </ng-template>
+  <ng-template #show>
+    <section class="nav-bar">
+      <div class="logo"><img src="assets/img/logo.png" alt="logo"></div>
+      <button class="log-out" (click)=' deleteData()'>
+        <i class="far fa-sign-out-alt"></i>
+      </button>
+    </section>
+    <div class="home">
+      <div class="container-info">
+        <div class="info">
+          <div class="location">{{result.location.name}}</div>
+          <div class="container-wind">Wind :
+            <div class="container-Value">{{result.current.wind_speed}} Km/h</div>
+            <i class="fad fa-windsock"></i>
+          </div>
+          <div class="container-humidity">Humidity :
+            <div class="container-Value">{{result.current.humidity}} %</div>
+            <i class="fas fa-humidity"></i>
+          </div>
+          <div class="container-pressure">Pressure :
+            <div class="container-Value">{{result.current.pressure.toLocaleString()}} hPa</div>
+            <i class="fas fa-heat"></i>
+          </div>
+          <div class="container-visibility">Visibility :
+            <div class="container-Value">{{result.current.visibility}} Km</div>
+            <i class="far fa-eye"></i>
+          </div>
+          <div class="container-temperature">Temperature :
+            <div class="container-Value">{{getExactNumber()}} °C</div>
+            <i *ngIf='getIconOfTemp(); else tempLow' class="fad fa-temperature-up"></i>
+            <ng-template #tempLow>
+              <i class="fal fa-temperature-down"></i>
+            </ng-template>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="container-meteo">
-      <img src={{result.current.weather_icons}} alt="icon">
-      <!-- <div class="container-icon" [ngSwitch]='result.current.weather_descriptions[0]'>
+      <div class="container-meteo">
+        <img src={{result.current.weather_icons}} alt="icon">
+        <!-- <div class="container-icon" [ngSwitch]='result.current.weather_descriptions[0]'>
         <i *ngSwitchCase="'Partly cloudy'" class="fal fa-snowflake"></i>
         <i *ngSwitchCase="'Overcast clouds'" class="fal fa-snowflake"></i>
         <i *ngSwitchCase="'Clear sky'" class="fas fa-sun"></i>
@@ -64,12 +65,13 @@
         <i *ngSwitchCase="'Broken clouds'" class="fas fa-smoke"></i>
         <i *ngSwitchCase="'Light snow'" class="fas fa-smoke"></i>
       </div> -->
-      <div class="container-description">
-        <span>{{(hours >= 5 && hours < 12) ? 'Good Morning' : (hours >= 12 && hours < 17) ? 'Good Afternoon' : (hours >= 17 || hours < 5)  ? 'Good Evening' : 'Good Afternoon'}}
-          {{nameFromLocal.getName()}},<br> Today's weather says it is {{result.current.weather_descriptions[0]}}.</span>
-        <span>The exact time for this location is :<br> {{result.current.observation_time}}</span>
+        <div class="container-description">
+          <span>{{(hours >= 5 && hours < 12) ? 'Good Morning' : (hours >= 12 && hours < 17) ? 'Good Afternoon' : (hours >= 17 || hours < 5)  ? 'Good Evening' : 'Good Afternoon'}}
+            {{nameFromLocal.getName()}},<br> Today's weather says it is {{result.current.weather_descriptions[0]}}.</span>
+          <span>The exact time for this location is :<br> {{result.current.observation_time}}</span>
+        </div>
       </div>
     </div>
-  </div>
-  <footer>&copy; Copyright 2020 Asu Software</footer>
-</ng-template>
+    <footer>&copy; Copyright 2020 Asu Software</footer>
+  </ng-template>
+</section>
