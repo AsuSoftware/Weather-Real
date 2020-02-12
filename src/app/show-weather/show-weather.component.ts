@@ -17,7 +17,7 @@ export class ShowWeatherComponent implements OnInit {
   result: ApiResponse;
   loading = true;
 
-  constructor(private nameFromLocal: LocalStorageService, private information: ServerService, private router: Router) {
+  constructor(private information: ServerService, private router: Router) {
   }
 
 
