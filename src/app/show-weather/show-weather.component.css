@@ -120,6 +120,7 @@
 
 .log-out{
   display: flex;
+  align-items: center;
   margin-right: 26px;
   background: transparent;
   border: 0;
